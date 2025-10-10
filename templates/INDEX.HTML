@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            text-align: center; 
+            padding: 50px; 
+            color: white; 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+        }
+        input[type=text] { padding:10px; border-radius:5px; border:none; width:200px; }
+        input[type=submit] { padding:10px 15px; border:none; border-radius:5px; cursor:pointer; background:#333; color:white; }
+        img { width: 80px; }
+    </style>
+</head>
+<body style="background-image: url('{{ weather_bg }}');">
+    <h1>🌤 Simple Weather App</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name" required>
+        <input type="submit" value="Check Weather">
+    </form>
+
+    {% if weather %}
+        {% if weather.error %}
+            <p>{{ weather.error }}</p>
+        {% else %}
+            <div>
+                <h2>{{ weather.city }}, {{ weather.region }}, {{ weather.country }}</h2>
+                <h3>{{ weather.temperature }}°C</h3>
+                <p>{{ weather.condition }}</p>
+                <img src="{{ weather.icon }}" alt="Weather icon">
+            </div>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
