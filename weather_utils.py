@@ -40,7 +40,7 @@ def get_weather(city: str):
     else:
         bg = "static/default.jpg"
         icon = "static/sun.png"
-
+    
     return {
         "city": data["location"]["name"],
         "region": data["location"]["region"],
@@ -48,5 +48,9 @@ def get_weather(city: str):
         "temperature": data["current"]["temp_c"],
         "condition": data["current"]["condition"]["text"],
         "weather_bg": bg,
-        "weather_icon": icon
+        "weather_icon": icon,
+        "wind_kph": data["current"]["wind_kph"],
+        "wind_dir": data["current"]["wind_dir"],
+        "uv": data["current"]["uv"],
+        "humidity": data["current"]["humidity"]
     }

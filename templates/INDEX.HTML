@@ -63,10 +63,14 @@
         .wimg{
             width: 150px;
         }
-
+        .ibox{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
         input[type=text] { padding:10px; border-radius:5px; border:none; width: 60%; }
         input[type=submit] { padding:10px 15px; border:none; border-radius:5px; cursor:pointer; background:#333; color:white; }
-        /* img { width: 80px; } */
+
     </style>
 </head>
 <body style="background-image: url('{{ weather_bg }}');">
@@ -87,7 +91,12 @@
                     <div class="wbox">
                         <h2>{{ weather.city }}, {{ weather.region }}, {{ weather.country }}</h2>
                         <h3>Temp: {{ weather.temperature }}°C</h3>
-                        <p>Condition: {{ weather.condition }}</p>
+                        <div class="ibox">
+                            <p>Condition: {{ weather.condition }}</p>
+                            <p>Wind speed: {{ weather.wind_kph }}{{ weather.wind_dir }}</p>
+                            <p>Humidity: {{ weather.humidity }}</p>
+                            <p>UV index: {{ weather.uv }}</p>
+                        </div>
                     </div>
                         <img src="{{weather_icon}}" class="wimg" alt="Weather icon">
                 </div>
