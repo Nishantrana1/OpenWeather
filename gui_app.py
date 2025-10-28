@@ -42,7 +42,7 @@ def update_icon(icon_path):
     canvas.itemconfig(icon_item, image=weather_icon_tk, state="normal")
 
 def update_weather_info(weather):
-    text = f"{weather['city']}, {weather['country']}\nTemp: {weather['temperature']}°C\nCondition: {weather['condition']}\nHumidity: {weather['humidity']}"
+    text = f"{weather['city']}, {weather['country']}\nTemp: {weather['temperature']}°C\nCondition: {weather['condition']}\nHumidity: {weather['humidity']}\nWind Speed: {weather['windkph']}{weather['winddir']}"
     canvas.itemconfig(info_item, text=text)
 
 root = tk.Tk()
