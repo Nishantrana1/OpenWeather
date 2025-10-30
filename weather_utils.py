@@ -71,7 +71,7 @@ def get_weather(city: str):
             f"City: {weather_info['city']}, Country: {weather_info['country']}\n"
             f"Condition: {weather_info['condition']}, Temperature: {weather_info['temperature']}°C, "
             f"Humidity: {weather_info['humidity']}%, Wind: {weather_info['windkph']} kph {weather_info['winddir']}.\n"
-            f"Make in hinglish shayri type. dont make it too serious make it funny but in rhyme. no need to tell temperature etc just do it something like mausam achhha hai etc. also give some activities to do in the weather in bullets only 2-3 points"
+            f"Make in hinglish shayri type. dont make it too serious make it funny in rhyme but not too much. no need to tell temperature etc just do it something like mausam achhha hai etc. also give some activities to do in the weather in bullets only 2-3 points not in rhyme"
         )
 
         response = model.generate_content(prompt)
